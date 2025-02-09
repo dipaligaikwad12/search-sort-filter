@@ -1,263 +1,243 @@
-const USERS = [
-    {
-      "id": 1,
-      "name": "Aarav Sharma",
-      "city": "Mumbai",
-      "age": 25,
-      "avatar": "https://i.pravatar.cc/150?img=1"
-    },
-    {
-      "id": 2,
-      "name": "Sanya Reddy",
-      "city": "Delhi",
-      "age": 30,
-      "avatar": "https://i.pravatar.cc/150?img=2"
-    },
-    {
-      "id": 3,
-      "name": "Rohan Verma",
-      "city": "Bangalore",
-      "age": 28,
-      "avatar": "https://i.pravatar.cc/150?img=3"
-    },
-    {
-      "id": 4,
-      "name": "Ananya Gupta",
-      "city": "Kolkata",
-      "age": 35,
-      "avatar": "https://i.pravatar.cc/150?img=4"
-    },
-    {
-      "id": 5,
-      "name": "Karan Desai",
-      "city": "Chennai",
-      "age": 29,
-      "avatar": "https://i.pravatar.cc/150?img=5"
-    },
-    {
-      "id": 6,
-      "name": "Priya Yadav",
-      "city": "Hyderabad",
-      "age": 31,
-      "avatar": "https://i.pravatar.cc/150?img=6"
-    },
-    {
-      "id": 7,
-      "name": "Rahul Patel",
-      "city": "Pune",
-      "age": 32,
-      "avatar": "https://i.pravatar.cc/150?img=7"
-    },
-    {
-      "id": 8,
-      "name": "Richa Jain",
-      "city": "Ahmedabad",
-      "age": 27,
-      "avatar": "https://i.pravatar.cc/150?img=8"
-    },
-    {
-      "id": 9,
-      "name": "Nikhil Mehta",
-      "city": "Surat",
-      "age": 33,
-      "avatar": "https://i.pravatar.cc/150?img=9"
-    },
-    {
-      "id": 10,
-      "name": "Ayesha Khan",
-      "city": "Jaipur",
-      "age": 26,
-      "avatar": "https://i.pravatar.cc/150?img=10"
-    },
-    {
-      "id": 11,
-      "name": "Vikram Soni",
-      "city": "Gurgaon",
-      "age": 35,
-      "avatar": "https://i.pravatar.cc/150?img=11"
-    },
-    {
-      "id": 12,
-      "name": "Nikita Sharma",
-      "city": "Noida",
-      "age": 29,
-      "avatar": "https://i.pravatar.cc/150?img=12"
-    },
-    {
-      "id": 13,
-      "name": "Mohan Rathi",
-      "city": "Indore",
-      "age": 34,
-      "avatar": "https://i.pravatar.cc/150?img=13"
-    },
-    {
-      "id": 14,
-      "name": "Tanya Bhardwaj",
-      "city": "Lucknow",
-      "age": 28,
-      "avatar": "https://i.pravatar.cc/150?img=14"
-    },
-    {
-      "id": 15,
-      "name": "Harshit Singh",
-      "city": "Chandigarh",
-      "age": 32,
-      "avatar": "https://i.pravatar.cc/150?img=15"
-    },
-    {
-      "id": 16,
-      "name": "Shreya Tiwari",
-      "city": "Bhopal",
-      "age": 31,
-      "avatar": "https://i.pravatar.cc/150?img=16"
-    },
-    {
-      "id": 17,
-      "name": "Anshika Verma",
-      "city": "Kochi",
-      "age": 25,
-      "avatar": "https://i.pravatar.cc/150?img=17"
-    },
-    {
-      "id": 18,
-      "name": "Raghav Joshi",
-      "city": "Patna",
-      "age": 30,
-      "avatar": "https://i.pravatar.cc/150?img=18"
-    },
-    {
-      "id": 19,
-      "name": "Simran Rani",
-      "city": "Nagpur",
-      "age": 28,
-      "avatar": "https://i.pravatar.cc/150?img=19"
-    },
-    {
-      "id": 20,
-      "name": "Deepak Kumar",
-      "city": "Vadodara",
-      "age": 33,
-      "avatar": "https://i.pravatar.cc/150?img=20"
-    },
-    {
-      "id": 21,
-      "name": "Sanya Bansal",
-      "city": "Chandigarh",
-      "age": 27,
-      "avatar": "https://i.pravatar.cc/150?img=21"
-    },
-    {
-      "id": 22,
-      "name": "Rohit Gupta",
-      "city": "Delhi",
-      "age": 35,
-      "avatar": "https://i.pravatar.cc/150?img=22"
-    },
-    {
-      "id": 23,
-      "name": "Vishal Chauhan",
-      "city": "Bangalore",
-      "age": 32,
-      "avatar": "https://i.pravatar.cc/150?img=23"
-    },
-    {
-      "id": 24,
-      "name": "Isha Desai",
-      "city": "Pune",
-      "age": 29,
-      "avatar": "https://i.pravatar.cc/150?img=24"
-    },
-    {
-      "id": 25,
-      "name": "Shubham Yadav",
-      "city": "Kolkata",
-      "age": 34,
-      "avatar": "https://i.pravatar.cc/150?img=25"
-    },
-    {
-      "id": 26,
-      "name": "Ritika Sharma",
-      "city": "Hyderabad",
-      "age": 31,
-      "avatar": "https://i.pravatar.cc/150?img=26"
-    },
-    {
-      "id": 27,
-      "name": "Akash Mehta",
-      "city": "Surat",
-      "age": 29,
-      "avatar": "https://i.pravatar.cc/150?img=27"
-    },
-    {
-      "id": 28,
-      "name": "Nisha Verma",
-      "city": "Mumbai",
-      "age": 32,
-      "avatar": "https://i.pravatar.cc/150?img=28"
-    },
-    {
-      "id": 29,
-      "name": "Aditya Rathi",
-      "city": "Chennai",
-      "age": 34,
-      "avatar": "https://i.pravatar.cc/150?img=29"
-    },
-    {
-      "id": 30,
-      "name": "Kriti Pandey",
-      "city": "Lucknow",
-      "age": 26,
-      "avatar": "https://i.pravatar.cc/150?img=30"
-    },
-    {
-      "id": 31,
-      "name": "Ajay Joshi",
-      "city": "Nagpur",
-      "age": 29,
-      "avatar": "https://i.pravatar.cc/150?img=31"
-    },
-    {
-      "id": 32,
-      "name": "Prateek Kumar",
-      "city": "Gurgaon",
-      "age": 28,
-      "avatar": "https://i.pravatar.cc/150?img=32"
-    },
-    {
-      "id": 33,
-      "name": "Aarti Gupta",
-      "city": "Delhi",
-      "age": 32,
-      "avatar": "https://i.pravatar.cc/150?img=33"
-    },
-    {
-      "id": 34,
-      "name": "Manoj Tiwari",
-      "city": "Bangalore",
-      "age": 35,
-      "avatar": "https://i.pravatar.cc/150?img=34"
-    },
-    {
-      "id": 35,
-      "name": "Sneha Bansal",
-      "city": "Chandigarh",
-      "age": 30,
-      "avatar": "https://i.pravatar.cc/150?img=35"
-    },
-    {
-      "id": 36,
-      "name": "Amit Yadav",
-      "city": "Mumbai",
-      "age": 33,
-      "avatar": "https://i.pravatar.cc/150?img=36"
-    },
-    {
-      "id": 37,
-      "name": "Neha Reddy",
-      "city": "Hyderabad",
-      "age": 29,
-      "avatar": "https://i.pravatar.cc/150?img=37"
-    },
-  ];
+const USERS =[
+  {
+    "name": "Aarav Sharma",
+    "mobile_no": "+919876543210",
+    "city": "Delhi",
+    "age": 25,
+    "avatar": "https://i.pravatar.cc/300?img=3"
+  },
+  {
+    "name": "Aditi Verma",
+    "mobile_no": "+919876543211",
+    "city": "Mumbai",
+    "age": 22,
+    "avatar": "https://i.pravatar.cc/300?img=4"
+  },
+  {
+    "name": "Ayaan Patel",
+    "mobile_no": "+919876543212",
+    "city": "Ahmedabad",
+    "age": 28,
+    "avatar": "https://i.pravatar.cc/300?img=5"
+  },
+  {
+    "name": "Ananya Gupta",
+    "mobile_no": "+919876543213",
+    "city": "Kolkata",
+    "age": 24,
+    "avatar": "https://i.pravatar.cc/300?img=6"
+  },
+  {
+    "name": "Arjun Reddy",
+    "mobile_no": "+919876543214",
+    "city": "Hyderabad",
+    "age": 30,
+    "avatar": "https://i.pravatar.cc/300?img=7"
+  },
+  {
+    "name": "Saanvi Mehta",
+    "mobile_no": "+919876543215",
+    "city": "Chennai",
+    "age": 27,
+    "avatar": "https://i.pravatar.cc/300?img=8"
+  },
+  {
+    "name": "Vivaan Desai",
+    "mobile_no": "+919876543216",
+    "city": "Surat",
+    "age": 26,
+    "avatar": "https://i.pravatar.cc/300?img=9"
+  },
+  {
+    "name": "Diya Singh",
+    "mobile_no": "+919876543217",
+    "city": "Jaipur",
+    "age": 23,
+    "avatar": "https://i.pravatar.cc/300?img=10"
+  },
+  {
+    "name": "Ishaan Kapoor",
+    "mobile_no": "+919876543218",
+    "city": "Bangalore",
+    "age": 29,
+    "avatar": "https://i.pravatar.cc/300?img=11"
+  },
+  {
+    "name": "Madhavi Rao",
+    "mobile_no": "+919876543219",
+    "city": "Lucknow",
+    "age": 24,
+    "avatar": "https://i.pravatar.cc/300?img=12"
+  },
+  {
+    "name": "Rohan Kumar",
+    "mobile_no": "+919876543220",
+    "city": "Pune",
+    "age": 31,
+    "avatar": "https://i.pravatar.cc/300?img=13"
+  },
+  {
+    "name": "Simran Sharma",
+    "mobile_no": "+919876543221",
+    "city": "Indore",
+    "age": 26,
+    "avatar": "https://i.pravatar.cc/300?img=14"
+  },
+  {
+    "name": "Aryan Joshi",
+    "mobile_no": "+919876543222",
+    "city": "Chandigarh",
+    "age": 27,
+    "avatar": "https://i.pravatar.cc/300?img=15"
+  },
+  {
+    "name": "Neha Yadav",
+    "mobile_no": "+919876543223",
+    "city": "Kochi",
+    "age": 25,
+    "avatar": "https://i.pravatar.cc/300?img=16"
+  },
+  {
+    "name": "Karan Patil",
+    "mobile_no": "+919876543224",
+    "city": "Navi Mumbai",
+    "age": 28,
+    "avatar": "https://i.pravatar.cc/300?img=17"
+  },
+  {
+    "name": "Tanya Singh",
+    "mobile_no": "+919876543225",
+    "city": "Bhopal",
+    "age": 22,
+    "avatar": "https://i.pravatar.cc/300?img=18"
+  },
+  {
+    "name": "Harsh Kapoor",
+    "mobile_no": "+919876543226",
+    "city": "Varanasi",
+    "age": 29,
+    "avatar": "https://i.pravatar.cc/300?img=19"
+  },
+  {
+    "name": "Pooja Patel",
+    "mobile_no": "+919876543227",
+    "city": "Vadodara",
+    "age": 24,
+    "avatar": "https://i.pravatar.cc/300?img=20"
+  },
+  {
+    "name": "Rajesh Nair",
+    "mobile_no": "+919876543228",
+    "city": "Nagpur",
+    "age": 32,
+    "avatar": "https://i.pravatar.cc/300?img=21"
+  },
+  {
+    "name": "Ananya Mehra",
+    "mobile_no": "+919876543229",
+    "city": "Mumbai",
+    "age": 25,
+    "avatar": "https://i.pravatar.cc/300?img=22"
+  },
+  {
+    "name": "Krishna Iyer",
+    "mobile_no": "+919876543230",
+    "city": "Coimbatore",
+    "age": 27,
+    "avatar": "https://i.pravatar.cc/300?img=23"
+  },
+  {
+    "name": "Riya Kapoor",
+    "mobile_no": "+919876543231",
+    "city": "Delhi",
+    "age": 22,
+    "avatar": "https://i.pravatar.cc/300?img=24"
+  },
+  {
+    "name": "Vishal Agarwal",
+    "mobile_no": "+919876543232",
+    "city": "Gurgaon",
+    "age": 30,
+    "avatar": "https://i.pravatar.cc/300?img=25"
+  },
+  {
+    "name": "Meera Reddy",
+    "mobile_no": "+919876543233",
+    "city": "Chennai",
+    "age": 28,
+    "avatar": "https://i.pravatar.cc/300?img=26"
+  },
+  {
+    "name": "Amit Singh",
+    "mobile_no": "+919876543234",
+    "city": "Kolkata",
+    "age": 33,
+    "avatar": "https://i.pravatar.cc/300?img=27"
+  },
+  {
+    "name": "Tanvi Bhatt",
+    "mobile_no": "+919876543235",
+    "city": "Ahmedabad",
+    "age": 26,
+    "avatar": "https://i.pravatar.cc/300?img=28"
+  },
+  {
+    "name": "Nikhil Reddy",
+    "mobile_no": "+919876543236",
+    "city": "Hyderabad",
+    "age": 31,
+    "avatar": "https://i.pravatar.cc/300?img=29"
+  },
+  {
+    "name": "Sanya Joshi",
+    "mobile_no": "+919876543237",
+    "city": "Pune",
+    "age": 24,
+    "avatar": "https://i.pravatar.cc/300?img=30"
+  },
+  {
+    "name": "Ravindra Kumar",
+    "mobile_no": "+919876543238",
+    "city": "Patna",
+    "age": 35,
+    "avatar": "https://i.pravatar.cc/300?img=31"
+  },
+  {
+    "name": "Priya Rani",
+    "mobile_no": "+919876543239",
+    "city": "Jaipur",
+    "age": 28,
+    "avatar": "https://i.pravatar.cc/300?img=32"
+  },
+  {
+    "name": "Abhinav Singh",
+    "mobile_no": "+919876543240",
+    "city": "Guwahati",
+    "age": 27,
+    "avatar": "https://i.pravatar.cc/300?img=33"
+  },
+  {
+    "name": "Siddhi Deshmukh",
+    "mobile_no": "+919876543241",
+    "city": "Navi Mumbai",
+    "age": 23,
+    "avatar": "https://i.pravatar.cc/300?img=33"
+  },
+  {
+    "name": "Shivani Agarwal",
+    "mobile_no": "+919876543242",
+    "city": "Bangalore",
+    "age": 25,
+    "avatar": "https://i.pravatar.cc/300?img=34"
+  },
+  {
+    "name": "Mithun Das",
+    "mobile_no": "+919876543243",
+    "city": "Kolkata",
+    "age": 29,
+    "avatar": "https://i.pravatar.cc/300?img=35"
+  },
+];
+ 
 
   export { USERS };
